@@ -2,6 +2,38 @@
 <resources>
 
     <string name="hello">Hello World, PhillyMagicGardensActivity!</string>
-    <string name="app_name">PhillyMagicGardens</string>
+    <string name="app_name">Philly Magic Gardens App</string>
+    <string name="contact_header">Contact Information</string>
+    <string name="contact_address">Philadelphia\'s Magic Gardens\n1020 South Street\nPhiladelphia, PA 19147\nBetween 10th and 11th Streets on South Street</string>
+    <string name="contact_phone">215–733–0390</string>
+    <string name="contact_email">info@phillymagicgardens.org</string>
+    <string name="contact_website">www.phillymagicgardens.org</string>
+    <string name="hours_header">Hours</string>
+    <string name="hours_summer_header">Summer Public Hours (April-October)*</string>
+    <string name="hours_summer">Sunday - Thursday: 11:00 AM - 6:00 PM\nFriday and Saturday: 11:00 AM - 8:00 PM</string>
+    <string name="hours_winter_header">Winter Public Hours (November-March)*</string>
+    <string name="hours_winter">Sunday - Thursday: 11:00 AM - 5:00 PM\nFriday and Saturday: 11:00 AM - 8:00 PM</string>
+    <string name="hours_holiday_header">Holiday Hours</string>
+    <string name="hours_holiday">New Years Day: NOON - 5:00 PM\nThanksgiving: CLOSED\nChristmas Eve: CLOSED\nChristmas Day: CLOSED\nNew Years Eve: 11:00 AM - 5:00 PM</string>
+    <string name="hours_note">*We often host special events or private rentals, so please visit our Updated Calendar for changes to our normal hours. </string>
+    <string name="admission_header">Admission</string>
+    <string name="admission_ga_header">General Admission Self-Guided Tour</string>
+    <string name="admission_ga_rates">$5 for adults\n$2 for ages 6–12\nFREE for children 5 and under</string>
+    <string name="admission_ga_info">Explore the fully–mosaicked gallery spaces and labyrinth sculpture garden at your own leisure. Visitors can spend as little as 20 minutes or stay for hours, viewing the thousands of diverse tiles, intricate sculptures, and varied texts embedded in the walls. Garden Guide interpreters are available to give brief introductions to Philadelphia\'s Magic Gardens and answer questions.\n&lt;b&gt;Self-Guided Tour groups over 20 people&lt;\b&gt; must reserve in advance by emailing khealy@phillymagicgardens.org or by calling 215–733–0390. </string>
+    <string name="admission_tours_header">Guided Weekend Tours</string>
+    <string name="admission_tours_rates">&lt;b&gt;Guided Neighborhood Walking Tour&lt;/b&gt; (April - October)\n(includes admission to PMG)\nAdults $10\nYouth $6\n\n&lt;b&gt;Guided Site Tour&lt;/b&gt; (November - March)\nAdults $8\nYouth $5</string>
+    <string name="admission_tours_info">Weekend public tours are held &lt;b&gt;Saturdays at noon and 4:00 PM and Sundays at 4:00 PM.&lt;/b&gt; To make reservations for a tour please call 215–733–0390. Information of our private group tour options can be found in the Education section of our website.</string>
+    <string name="policy_header">Policies</string>
+    <string name="policy_info">&amp;#8226; Running and horseplay are not permitted\n&amp;#8226; Children under the age of 16 must be under adult supervision at all times\n&amp;#8226; Food and drink is permitted in the Magic Gardens\n&amp;#8226; Casual photography is permitted and encouraged during our regular hours and events.  Professional photographers and filmmakers must contact us in advance.</string>
+    <string name="parking_header">Parking</string>
+    <string name="parking_info">Metered and two-hour parking in the immediate vicinity is available along South and Bainbridge Streets, and along numbered streets. Free untimed parking is available on streets farther south. </string>
+    <string name="accessibility_header">Accessibility</string>
+    <string name="accessibility_info">Much of the main indoor gallery at Philadelphia\'s Magic Gardens and parts of the outdoor sculpture garden are accessible to people in wheelchairs. Both the basement and the sculpture garden have stairways and narrow passageways that are not equipped with ramps, elevators, or railings. Visitors with disabilities are encouraged to further explore the work of Isaiah Zagar through tours that lead visitors through PMG and down the sidewalks and alleys of the surrounding neighborhood. Please contact us and we will try to accommodate your needs.</string>
+    <string-array name="poi_title">
+        <item >Introduction</item>
+    </string-array>
+    <string-array name="poi_info">
+        <item >Philadelphia\'s Magic Gardens (PMG) is a mosaicked visionary art environment, gallery, and community arts center that preserves, interprets, and provides access to Isaiah Zagar\'s unique mosaic art environment and his public murals. The Magic Gardens site, Zagar\'s largest artwork, includes a fully tiled indoor space and a massive outdoor mosaic sculpture garden that spans half a block on Philadelphia\'s famous South Street. Inside, visitors can view folk art statues, bicycle wheels, colorful glass bottles, Zagar\'s hand-made tiles, and thousands of glittering mirrors. The installation pays tribute to Zagar\'s artistic influences, along with community and personal experiences.\nOpen to visitors daily, PMG has become a unique Philadelphia destination, hosting year-round, low-cost public programs within its own distinctive venue and the surrounding community. PMG, a nonprofit organization, inspires creativity and community engagement by educating the public about folk, mosaic, and visionary art. </item>
+    </string-array>
 
 </resources>
