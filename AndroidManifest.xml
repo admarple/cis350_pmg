@@ -19,6 +19,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity 
+            android:name=".VisitorInfoActivity">    
+        </activity>
+        
+        <activity 
+            android:name=".NavigationActivity">    
+        </activity>
+        
+        <activity 
+            android:name=".MapActivity">    
+        </activity>
+        
     </application>
 
 </manifest>

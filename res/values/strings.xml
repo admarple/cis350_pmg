@@ -38,5 +38,10 @@
     <string-array name="poi_info">
         <item >Philadelphia\'s Magic Gardens (PMG) is a mosaicked visionary art environment, gallery, and community arts center that preserves, interprets, and provides access to Isaiah Zagar\'s unique mosaic art environment and his public murals. The Magic Gardens site, Zagar\'s largest artwork, includes a fully tiled indoor space and a massive outdoor mosaic sculpture garden that spans half a block on Philadelphia\'s famous South Street. Inside, visitors can view folk art statues, bicycle wheels, colorful glass bottles, Zagar\'s hand-made tiles, and thousands of glittering mirrors. The installation pays tribute to Zagar\'s artistic influences, along with community and personal experiences.\nOpen to visitors daily, PMG has become a unique Philadelphia destination, hosting year-round, low-cost public programs within its own distinctive venue and the surrounding community. PMG, a nonprofit organization, inspires creativity and community engagement by educating the public about folk, mosaic, and visionary art. </item>
     </string-array>
+    <string name="pmg_logo_desc">PMG main logo</string>
+    <string name="pmg_splash_desc">Splash image for the app introduction</string>
+    <string name="map_button_text">Garden Map</string>
+    <string name="info_button_text">Visitor Information!</string>
+    <string name="menu_button_text">Menu</string>
 
 </resources>

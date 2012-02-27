@@ -5,9 +5,15 @@
     android:orientation="vertical" 
     android:background="#EEEEEEEE" >
 
-    <ImageView
+    <!-- <WebView
+        android:id="@+id/map_webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" /> -->
+    
+    <!-- <ImageView
+        android:id="@+id/map"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/pmg_garden_plan_exterior1" />
+        android:src="@drawable/pmg_garden_plan_exterior1" /> -->
 
 </LinearLayout>

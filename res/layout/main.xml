@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flipper"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" 
-    android:background="#EEEEEEEE" >
+    android:layout_height="fill_parent" >
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/standard_pmg_logo_png" />
-    <ImageView
-        android:layout_width="fill_parent"
+    <include 
+        android:id="@+id/intro_splash"
+        layout="@layout/hello"
+    />
+    <include
+        android:id="@+id/intro_nav"
+        layout="@layout/nav"
+    />
+    <!-- <ImageView
+        android:contentDescription="@string/pmg_splash_desc" 
+        android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:src="@drawable/debbie_cohen_gardens5" />
+        android:src="@drawable/debbie_cohen_gardens5" 
+        android:onClick="onGotoNavigationActivity"/> -->
 
-</LinearLayout>
+</ViewFlipper>

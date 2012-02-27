@@ -1,13 +1,95 @@
 package edu.upenn.cis350;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 public class PhillyMagicGardensActivity extends Activity {
+	
+	ViewFlipper flipper;
+	// This is an ugly, ugly thing to do, but it will have to wait to be fixed
+	final Activity pushThis = this;
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ext_map);
+        setContentView(R.layout.main);
+        
+        flipper = (ViewFlipper) findViewById(R.id.flipper);
+        ImageView splash = (ImageView) findViewById(R.id.hello_image);
+        
+        splash.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		flipper.setInAnimation(inFromBottomAnimation());
+        		flipper.setOutAnimation(outToTopAnimation());
+        		flipper.showNext();
+        	}
+        });
+        
+        Button mapButton = (Button) findViewById(R.id.map_button);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent i = new Intent(pushThis, MapActivity.class);
+        		i.putExtra(MapActivity.MAP_CODE_KEY, MapActivity.EXTERIOR_CODE);
+        		startActivity(i);
+        	}
+        });
+        
+        Button infoButton = (Button) findViewById(R.id.info_button);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent i = new Intent(pushThis, VisitorInfoActivity.class);
+        		startActivity(i);
+        	}
+        });
     }
+
+    private Animation inFromBottomAnimation() {
+    	Animation inFromRight = new TranslateAnimation(
+    			Animation.RELATIVE_TO_PARENT,   0.0f, Animation.RELATIVE_TO_PARENT,  0.0f,
+    			Animation.RELATIVE_TO_PARENT,  +1.0f, Animation.RELATIVE_TO_PARENT,  0.0f
+    			);
+    	inFromRight.setDuration(1000);
+    	inFromRight.setInterpolator(new AccelerateInterpolator());
+    	return inFromRight;
+    }
+    private Animation outToTopAnimation() {
+    	Animation outtoLeft = new TranslateAnimation(
+    			Animation.RELATIVE_TO_PARENT,  0.0f, Animation.RELATIVE_TO_PARENT,   0.0f,
+    			Animation.RELATIVE_TO_PARENT,  0.0f, Animation.RELATIVE_TO_PARENT,  -1.0f
+    			);
+    	outtoLeft.setDuration(1000);
+    	outtoLeft.setInterpolator(new AccelerateInterpolator());
+    	return outtoLeft;
+    }
+    /*
+    private Animation inFromTopAnimation() {
+    	Animation inFromLeft = new TranslateAnimation(
+    			Animation.RELATIVE_TO_PARENT,   0.0f, Animation.RELATIVE_TO_PARENT,  0.0f,
+    			Animation.RELATIVE_TO_PARENT,  -1.0f, Animation.RELATIVE_TO_PARENT,  0.0f
+    			);
+    	inFromLeft.setDuration(500);
+    	inFromLeft.setInterpolator(new AccelerateInterpolator());
+    	return inFromLeft;
+    }
+    private Animation outToBottomAnimation() {
+    	Animation outtoRight = new TranslateAnimation(
+    			Animation.RELATIVE_TO_PARENT,  0.0f, Animation.RELATIVE_TO_PARENT,   0.0f,
+    			Animation.RELATIVE_TO_PARENT,  0.0f, Animation.RELATIVE_TO_PARENT,  +1.0f
+    			);
+    	outtoRight.setDuration(500);
+    	outtoRight.setInterpolator(new AccelerateInterpolator());
+    	return outtoRight;
+    }
+	*/
+
+
 }
