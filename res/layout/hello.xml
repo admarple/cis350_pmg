@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+<RelativeLayout 
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/gallerylayout"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
 
     <ImageView
         android:id="@+id/hello_image"
@@ -10,5 +12,15 @@
         android:layout_height="fill_parent"
         android:src="@drawable/debbie_cohen_gardens5"
     />
+    
+    <ImageView
+    	android:id="@+id/hello_logo"
+    	android:background="#0000"      
+    	android:src="@drawable/standard_pmg_logo_jpeg"
+    	android:scaleType="fitXY"
+    	android:layout_alignTop="@id/hello_image"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
+  />
 
-</LinearLayout>
+</RelativeLayout>

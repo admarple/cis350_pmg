@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.upenn.cis350"
+    android:installLocation="internalOnly"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -30,6 +31,14 @@
         
         <activity 
             android:name=".MapActivity">    
+        </activity>
+        
+        <activity 
+            android:name=".POIActivity">
+        </activity>
+        
+        <activity 
+            android:name=".POIIndexActivity">
         </activity>
         
     </application>

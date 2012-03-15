@@ -2,6 +2,8 @@
 <resources>
 
     <string name="hello">Hello World, PhillyMagicGardensActivity!</string>
+    
+    <!-- Strings for the Visitor Info page -->
     <string name="app_name">Philly Magic Gardens App</string>
     <string name="contact_header">Contact Information</string>
     <string name="contact_address">Philadelphia\'s Magic Gardens\n1020 South Street\nPhiladelphia, PA 19147\nBetween 10th and 11th Streets on South Street</string>
@@ -32,16 +34,51 @@
     <string name="parking_info">Metered and two-hour parking in the immediate vicinity is available along South and Bainbridge Streets, and along numbered streets. Free untimed parking is available on streets farther south. </string>
     <string name="accessibility_header">Accessibility</string>
     <string name="accessibility_info">Much of the main indoor gallery at Philadelphia\'s Magic Gardens and parts of the outdoor sculpture garden are accessible to people in wheelchairs. Both the basement and the sculpture garden have stairways and narrow passageways that are not equipped with ramps, elevators, or railings. Visitors with disabilities are encouraged to further explore the work of Isaiah Zagar through tours that lead visitors through PMG and down the sidewalks and alleys of the surrounding neighborhood. Please contact us and we will try to accommodate your needs.</string>
-    <string-array name="poi_title">
-        <item >Introduction</item>
+    
+    <!-- Strings for the POI pages -->
+    <string name="poi_index_header">Points of Interest</string>
+    <string-array name="poi_object">
+        <item>Introduction</item>
+        <item>Aerial Photograph by Gabe Kirchheimer</item>
+        <item>Clarence Schmidt Lettered Tiles</item>
+        <item>Nek Chand and Ferdinand Cheval Lettered Tiles</item>
+        <item>Gate</item>
     </string-array>
     <string-array name="poi_info">
         <item >Philadelphia\'s Magic Gardens (PMG) is a mosaicked visionary art environment, gallery, and community arts center that preserves, interprets, and provides access to Isaiah Zagar\'s unique mosaic art environment and his public murals. The Magic Gardens site, Zagar\'s largest artwork, includes a fully tiled indoor space and a massive outdoor mosaic sculpture garden that spans half a block on Philadelphia\'s famous South Street. Inside, visitors can view folk art statues, bicycle wheels, colorful glass bottles, Zagar\'s hand-made tiles, and thousands of glittering mirrors. The installation pays tribute to Zagar\'s artistic influences, along with community and personal experiences.\nOpen to visitors daily, PMG has become a unique Philadelphia destination, hosting year-round, low-cost public programs within its own distinctive venue and the surrounding community. PMG, a nonprofit organization, inspires creativity and community engagement by educating the public about folk, mosaic, and visionary art. </item>
+    	<item>Philadelphia’s Magic Gardens is a 3,000 square foot mosaicked building and labyrinth created by artist Isaiah Zagar over 14 years.  Zagar originally purchased 1020 South Street in 1994 as an artist studio space but began to clean up and mosaic the trash-strewn abandoned lots next door to his property. In 2002, the owner of the lots decided to sell them and threatened to have the mosaicked labyrinth bulldozed at Zagar’s expense. The community recognized the site as a unique part of Philadelphia and united to form a non-profit organization, newly entitled Philadelphia’s Magic Gardens, to purchase the lots and save the visionary art environment from demolition.</item>
+    	<item>Clarence Schmidt was one of Isaiah Zagar’s earliest and most important influences. When Zagar was 19, he visited Schmidt’s <i>My Mirrored Hope</i>, a visionary art environment in Woodstock, New York. The experience of walking through Clarence’s labyrinth of wood, windows, found objects, and aluminum foil-covered trees was overwhelming to the young artist. Zagar befriended Schmidt and realized he wanted to make art that embodied the same full sensory experience as <i>My Mirrored Hope</i>.  Schmidt passed away in 1978, decades after his environments burned to the ground from electrical accidents.  </item>
+    	<item>Zagar frequently references other visionary environments and artists from around the world. It is important to Zagar that people know that there are other artists who have the same impulse to transform large spaces into elaborately-decorated, full sensory experiences. His work features the names of artists like Helen Martins from South Africa, Nek Chand Saini from India, Joseph Ferdinand Cheval from France, and Simon Rodia from Los Angeles. He also pays tribute to influential artists that have greater public recognition for their achievements, such as Pablo Picasso, Marcel DuChamp, and Vincent Van Gogh.</item>
+    	<item>Isaiah Zagar and his wife Julia worked in the Peace Corps in Peru for three years in the 1960s. After relocating to Philadelphia in 1968, they opened the Eye’s Gallery on 4th and South Streets, showcasing folk art that they purchased in South America. This was the first site Zagar ever mosaicked. During the late 60s and 70s, South Street was transforming from an abandoned street to a thriving cultural destination due to the efforts of newly-settled artists and activists.  This period became known as the “South Street Renaissance.”  The Eye’s Gallery is still open today and continues to sell folk art from Latin America and around the world. </item>
     </string-array>
+    <string-array name="poi_location">
+    	<item></item>
+    	<item>Lobby</item>
+    	<item>Gallery One, South Wall</item>
+    	<item>Outdoor Labyrinth, First Alley Walls</item>
+    	<item>Courtyard North</item>
+    </string-array>
+    <string-array name="poi_theme">
+    	<item></item>
+    	<item>The Non-Profit</item>
+    	<item>Clarence Schmidt</item>
+    	<item>Visionary Environments &amp; Their Creators</item>
+    	<item>Eyes Gallery </item>
+    </string-array>
+    <string-array name="poi_photo">
+    	<item></item>
+    	<item>Aerial photograph by Gabe Kirchheimer</item>
+    	<item>Clarence Schmidt Lettered Tiles embedded on PMG Gallery One Wall</item>
+    	<item>Nek Chand and Simon Rodia Lettered Tiles</item>
+    	<item>Gate</item>
+    </string-array>
+    
+    <!-- Button Labels -->
     <string name="pmg_logo_desc">PMG main logo</string>
     <string name="pmg_splash_desc">Splash image for the app introduction</string>
     <string name="map_button_text">Garden Map</string>
     <string name="info_button_text">Visitor Information!</string>
     <string name="menu_button_text">Menu</string>
+    <string name="poi_index_button_text">Points of Interest</string>
 
 </resources>

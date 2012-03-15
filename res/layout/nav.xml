@@ -16,5 +16,11 @@
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
     	android:text="@string/info_button_text"/>
+    
+    <Button 
+        android:id="@+id/poi_index_button"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="@string/poi_index_button_text"/>
 
 </LinearLayout>
