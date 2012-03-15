@@ -2,6 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, PhillyMagicGardensActivity!</string>
+    <string name="hello_quote">“Art should not be segregated in museums; it needs to live free among us.”</string>
     
     <!-- Strings for the Visitor Info page -->
     <string name="app_name">Philly Magic Gardens App</string>

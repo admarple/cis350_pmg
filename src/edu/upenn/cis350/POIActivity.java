@@ -13,6 +13,9 @@ public class POIActivity extends Activity {
 	public final int[] poiImages = {
 		R.drawable.poi0,
 		R.drawable.poi1,
+		R.drawable.standard_pmg_logo_jpeg,
+		R.drawable.poi3_1,
+		R.drawable.standard_pmg_logo_jpeg,
 	};
 	
 	public String[] poiInfo;
