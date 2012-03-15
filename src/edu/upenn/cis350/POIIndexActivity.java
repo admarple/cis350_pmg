@@ -18,6 +18,7 @@ public class POIIndexActivity extends Activity {
 		
 		LinearLayout layout = new LinearLayout (this);
 		layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+		layout.setOrientation(LinearLayout.VERTICAL);
 
 		// LinearLayout layout = (LinearLayout) findViewById(R.id.poi_layout);
 
