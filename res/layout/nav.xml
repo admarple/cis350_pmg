@@ -39,5 +39,11 @@
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:text="@string/poi_index_button_text"/>
+    
+    <Button 
+        android:id="@+id/glossary_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/glossary_button_text"/>
 
 </LinearLayout>

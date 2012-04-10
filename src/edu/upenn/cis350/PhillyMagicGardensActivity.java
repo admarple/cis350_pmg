@@ -85,6 +85,14 @@ public class PhillyMagicGardensActivity extends Activity {
         		startActivity(i);
         	}
         });
+        
+        Button glossaryButton = (Button) findViewById(R.id.glossary_button);
+        glossaryButton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent i = new Intent(pushThis, GlossaryActivity.class);
+        		startActivity(i);
+        	}
+        });
     }
 
     private Animation inFromBottomAnimation() {

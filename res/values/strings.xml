@@ -113,6 +113,35 @@
     	<item></item>
     </string-array>
     
+    
+    
+    
+    <string-array name="glossary_term">
+    	<item>Readymade</item>
+    	<item>Blobs</item>
+    	<item>Visionary Art Environment</item>
+    	<item>South Street Renaissance</item>
+    	<item>Nek Chand Saini</item>
+    	<item>Helens Martins</item>
+    	<item>Edward James</item>
+    	<item>Ferdinand Cheval</item>
+    	<item>Clarence Schmidt</item>
+    	<item>Marcel Duchamp</item>
+    </string-array>
+    
+    <string-array name="glossary_def">
+    	<item>An object manufactured for some other purpose, presented by an artist as a work of art. Between 1914 and 1921, Marcel Duchamp (French, 1887-1968), who originated this concept, selected and signed, among others, a snow shovel, a comb, and a urinal. He occasionally altered readymades (sometimes called assisted readymades) — the most famous of which was a cheap reproduction of Mona Lisa on which Duchamp drew a mustache. [As definted by www.artlex.com]</item>
+    	<item>Adorned “puddles” of concrete that are dried and then bolted to a wall as a part of the Isaiah Zagar Mosaic Method.  Blobs often serve as the focal point for Zagar’s murals.</item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    </string-array>
+    
     <!-- Button Labels -->
     <string name="pmg_logo_desc">PMG main logo</string>
     <string name="pmg_splash_desc">Splash image for the app introduction</string>
@@ -129,6 +158,7 @@
     <string name="policy_button_text">Policy</string>
     <string name="parking_button_text">Parking</string>
     <string name="accessibility_button_text">Accessibility</string>
+    <string name="glossary_button_text">Glossary</string>
     
     <string name="poi_location_tag">Location: </string>
 

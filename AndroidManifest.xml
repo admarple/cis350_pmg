@@ -41,6 +41,10 @@
             android:name=".POIIndexActivity">
         </activity>
         
+        <activity 
+            android:name=".GlossaryActivity">
+        </activity>
+        
     </application>
 
 </manifest>
