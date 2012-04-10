@@ -123,6 +123,12 @@
     <string name="info_button_text">Visitor Information!</string>
     <string name="menu_button_text">Menu</string>
     <string name="poi_index_button_text">Points of Interest</string>
+    <string name="contact_button_text">Contact</string>
+    <string name="hours_button_text">Hours</string>
+    <string name="admission_button_text">Admission</string>
+    <string name="policy_button_text">Policy</string>
+    <string name="parking_button_text">Parking</string>
+    <string name="accessibility_button_text">Accessibility</string>
     
     <string name="poi_location_tag">Location: </string>
 
