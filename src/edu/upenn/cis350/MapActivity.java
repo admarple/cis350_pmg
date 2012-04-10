@@ -14,15 +14,17 @@ public class MapActivity extends Activity {
 	public static final int INDOORS_CODE = 2;
 	public static final int STUDIO_CODE = 3;
 	public static final String MAP_CODE_KEY = "mapCode";
+	public static final String HIGHLIGHT_CODE_KEY = "highlightCode";
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map);
-        setTouchImage(getIntent().getIntExtra(MAP_CODE_KEY, 0));
+        setTouchImage(getIntent().getIntExtra(MAP_CODE_KEY, 0), 
+        		      getIntent().getIntExtra(HIGHLIGHT_CODE_KEY, -1));
     }
 	
-	protected void setTouchImage(int touchCode) {
+	protected void setTouchImage(int touchCode, int highlightCode) {
 		
 		TouchImageView toUpdate = new TouchImageView(this);
         // toUpdate.setMaxZoom(4f);
@@ -46,6 +48,7 @@ public class MapActivity extends Activity {
 			break;
 		}
 		toUpdate.setImageOverlay(touchCode);
+		toUpdate.setHighlightIcon(highlightCode);
 		setContentView(toUpdate);
 		toUpdate.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 	}

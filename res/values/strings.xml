@@ -37,10 +37,6 @@
     <string name="accessibility_info">Much of the main indoor gallery at Philadelphia\'s Magic Gardens and parts of the outdoor sculpture garden are accessible to people in wheelchairs. Both the basement and the sculpture garden have stairways and narrow passageways that are not equipped with ramps, elevators, or railings. Visitors with disabilities are encouraged to further explore the work of Isaiah Zagar through tours that lead visitors through PMG and down the sidewalks and alleys of the surrounding neighborhood. Please contact us and we will try to accommodate your needs.</string>
     
     <!-- Strings for the POI pages -->
-    <string name="poi_index_header">Points of Interest</string>
-    <string-array name="poi_object">
-        
-    </string-array>
     <string-array name="poi_info">
     	<item>Philadelphia’s Magic Gardens is a 3,000 square foot mosaicked building and labyrinth created by artist Isaiah Zagar over 14 years. Zagar originally purchased 1020 South Street in 1994 as an artist studio space but began to clean up and mosaic the trash-strewn abandoned lots next door to his property. In 2002, the owner of the lots decided to sell them and threatened to have the mosaicked labyrinth bulldozed at Zagar’s expense. The community recognized the site as a unique part of Philadelphia and united to form a non-profit organization, newly entitled Philadelphia’s Magic Gardens, to purchase the lots and save the visionary art environment from demolition.</item>
     	<item>Clarence Schmidt was one of Isaiah Zagar’s earliest and most important influences. When Zagar was 19, he visited Schmidt’s My Mirrored Hope, a visionary art environment in Woodstock, New York. The experience of walking through Clarence’s labyrinth of wood, windows, found objects, and aluminum foil-covered trees was overwhelming to the young artist. Zagar befriended Schmidt and realized he wanted to make art that embodied the same full sensory experience as My Mirrored Hope. Schmidt passed away in 1978, decades after his environments burned to the ground from electrical accidents.</item>
@@ -127,5 +123,7 @@
     <string name="info_button_text">Visitor Information!</string>
     <string name="menu_button_text">Menu</string>
     <string name="poi_index_button_text">Points of Interest</string>
+    
+    <string name="poi_location_tag">Location: </string>
 
 </resources>

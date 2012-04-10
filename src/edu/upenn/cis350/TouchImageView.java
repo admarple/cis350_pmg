@@ -11,6 +11,7 @@
 package edu.upenn.cis350;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import edu.upenn.cis350.ColorShape;
 import android.content.Context;
@@ -64,7 +65,7 @@ public class TouchImageView extends ImageView {
 	Context context;
 	
 	// the overlay of shapes we wish to draw
-	ArrayList<ColorShape> overlay;
+	HashMap<Integer, ColorShape> overlay;
 
 	public TouchImageView(Context context) {
 		super(context);
@@ -78,7 +79,7 @@ public class TouchImageView extends ImageView {
 
 	private void sharedConstructing(Context context) {
 		super.setClickable(true);
-		overlay = new ArrayList<ColorShape>();
+		overlay = new HashMap<Integer, ColorShape>();
 		
 		this.context = context;
 		mGestureDetector = new GestureDetector(context, new GestureListener());
@@ -408,7 +409,7 @@ public class TouchImageView extends ImageView {
 		// we need to redraw all of the shapes in the overlay based on the new matrix
 		float[] m = new float[9];
 		matrix.getValues(m);
-		for (ColorShape cs : overlay) {
+		for (ColorShape cs : overlay.values()) {
 			int newLeft = Math.round(cs.storeBounds.left * m[Matrix.MSCALE_X] + m[Matrix.MTRANS_X]); // need to get back to integer...
 			int newTop = Math.round(cs.storeBounds.top * m[Matrix.MSCALE_Y] + m[Matrix.MTRANS_Y]);
 			int newRight = Math.round(newLeft + (cs.storeBounds.right - cs.storeBounds.left) * m[Matrix.MSCALE_X]);
@@ -422,52 +423,59 @@ public class TouchImageView extends ImageView {
 		switch (overlayCode) {
 		case MapActivity.BASEMENT_CODE:
 			// POI 3, East of Recycling Room
-			addOverlayIcon(2700, 1300, 2750, 1350);
+			addOverlayIcon(3, 900, 433, 917, 450);
 			break;
 		case MapActivity.EXTERIOR_CODE:
 			// POI 4, Courtyard North
-			addOverlayIcon(2100, 1800, 2150, 1850);
+			addOverlayIcon(4, 700, 600, 717, 617);
 			// POI 5, Outdoor Labyrinth, First Alley Walls
-			addOverlayIcon(1150, 1200, 1200, 1250);
+			addOverlayIcon(5, 383, 400, 400, 417);
 			// POI 6, Under Huppa
-			addOverlayIcon(675, 1175, 725, 1225);
+			addOverlayIcon(6, 225, 391, 242, 408);
 			// POI 7, West wall near sanctuary
-			addOverlayIcon(600, 300, 650, 350);
+			addOverlayIcon(7, 200, 100, 217, 117);
 			// POI 8, Garden
-			addOverlayIcon(900, 600, 950, 650);
+			addOverlayIcon(8, 300, 200, 317, 217);
 			// POI 9, West Wall "Philadelphia"
-			addOverlayIcon(1500, 225, 1550, 275);
+			addOverlayIcon(9, 500, 75, 517, 92);
 			// POI 10, Alley 2 [???]
-			addOverlayIcon(1400, 525, 1450, 575);
+			addOverlayIcon(10, 466, 175, 483, 192);
 			// POI 11, Pool 1
-			addOverlayIcon(1825, 1100, 1875, 1150);
+			addOverlayIcon(11, 608, 366, 625, 383);
 			break;
 		case MapActivity.INDOORS_CODE:
 			// POI 0, Lobby
-			addOverlayIcon(2400, 1000, 2450, 1050);
+			addOverlayIcon(0, 800, 333, 817, 350);
 			// POI 12, Watkins Street
-			addOverlayIcon(3000, 1000, 3050, 1050);
+			addOverlayIcon(12, 1033, 350, 1050, 367);
 			break;
 		case MapActivity.STUDIO_CODE:
 			// POI 1, Gallery 1 South Wall
-			addOverlayIcon(1825, 1625, 1875, 1675);
+			addOverlayIcon(1, 608, 541, 625, 558);
 			// POI 2, Gallery 1 West Wall
-			addOverlayIcon(1075, 800, 1125, 850);
+			addOverlayIcon(2, 358, 266, 375, 283);
 			break;
 		}
 	}
 	
-	protected void addOverlayIcon(int left, int top, int right, int bottom) {
+	public void setHighlightIcon(int iconIndex) {
+		ColorShape toHighlight = overlay.get(iconIndex);
+		if (toHighlight != null) {
+			toHighlight.click();
+		}
+	}
+	
+	protected void addOverlayIcon(int poiIndex, int left, int top, int right, int bottom) {
 		ShapeDrawable sd0 = new ShapeDrawable(new OvalShape());
 		sd0.setBounds(left, top, right, bottom);
 		ColorShape shape0 = new ColorShape(sd0, Color.BLUE, Color.RED);
-		overlay.add(shape0);
+		overlay.put(poiIndex, shape0);
 	}
 	
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		// Just draw all of the shapes
-		for (ColorShape cs : overlay) {
+		for (ColorShape cs : overlay.values()) {
 			cs.drawShape(canvas);
 		}
 	} 
