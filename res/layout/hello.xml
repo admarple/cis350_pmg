@@ -15,7 +15,7 @@
     
     <ImageView
     	android:id="@+id/hello_logo"    
-    	android:src="@drawable/standard_pmg_logo_jpeg"
+    	android:src="@drawable/standard_pmg_logo_png"
     	android:scaleType="fitXY"
     	android:layout_alignTop="@id/hello_image"
     	android:layout_width="fill_parent" 

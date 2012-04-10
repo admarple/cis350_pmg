@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 
-import com.example.touch.TouchImageView;
-
 public class MapActivity extends Activity {
 
 	public static final int BASEMENT_CODE = 0;
@@ -22,30 +20,7 @@ public class MapActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map);
         setTouchImage(getIntent().getIntExtra(MAP_CODE_KEY, 0));
-        // setMap(getIntent().getIntExtra(MAP_CODE_KEY, 0));
-        // setWeb(getIntent().getIntExtra(MAP_CODE_KEY, 0));
     }
-	
-	/* 
-	protected void setWeb(int webCode) {
-		WebView toUpdate = (WebView) findViewById(R.id.map_webview);
-        switch (webCode) {
-        case BASEMENT_CODE:
-        	toUpdate.loadUrl("file:/PhillyMagicGardens/res/drawable-hdpi/pmg_basement1.png");
-        	break;
-        case EXTERIOR_CODE:
-        	toUpdate.loadUrl("file:/res/drawable-hdpi/pmg_garden_plan_exterior1.png");
-        	// toUpdate.loadUrl("file:/");
-        	break;
-        case INDOORS_CODE:
-        	toUpdate.loadUrl("file:/PhillyMagicGardens/res/drawable-hdpi/pmg_indoors1.png");
-        	break;
-        case STUDIO_CODE:
-        	toUpdate.loadUrl("file:/PhillyMagicGardens/res/drawable-hdpi/pmg_studio_plan1.png");
-        	break;
-        }
-	}
-	*/
 	
 	protected void setTouchImage(int touchCode) {
 		
@@ -70,6 +45,7 @@ public class MapActivity extends Activity {
 			toUpdate.setImageBitmap(bMap);
 			break;
 		}
+		toUpdate.setImageOverlay(touchCode);
 		setContentView(toUpdate);
 		toUpdate.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 	}

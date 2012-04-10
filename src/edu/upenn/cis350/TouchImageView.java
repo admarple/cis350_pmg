@@ -2,17 +2,30 @@
  * TouchImageView.java
  * By: Michael Ortiz
  * Updated By: Patrick Lackemacher
+ * Updated again By: Alex Marple
  * -------------------
  * Extends Android ImageView to include pinch zooming and panning.
+ * Additionally, supports an overlay of shapes that zooms with the image (AM)
  */
 
-package com.example.touch;
+package edu.upenn.cis350;
 
+import java.util.ArrayList;
+
+import edu.upenn.cis350.ColorShape;
+import edu.upenn.cis350.R;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.PointF;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.graphics.drawable.shapes.RectShape;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -51,6 +64,9 @@ public class TouchImageView extends ImageView {
 	ScaleGestureDetector mScaleDetector;
 
 	Context context;
+	
+	// the overlay of shapes we wish to draw
+	ArrayList<ColorShape> overlay;
 
 	public TouchImageView(Context context) {
 		super(context);
@@ -64,6 +80,8 @@ public class TouchImageView extends ImageView {
 
 	private void sharedConstructing(Context context) {
 		super.setClickable(true);
+		overlay = new ArrayList<ColorShape>();
+		
 		this.context = context;
 		mGestureDetector = new GestureDetector(context, new GestureListener());
 		mScaleDetector = new ScaleGestureDetector(context, new ScaleListener());
@@ -384,5 +402,166 @@ public class TouchImageView extends ImageView {
 		bottom = height * saveScale - height
 				- (2 * redundantYSpace * saveScale);
 		setImageMatrix(matrix);
+	}
+	
+	@Override
+	public void setImageMatrix(Matrix matrix) {
+		super.setImageMatrix(matrix);
+		// we need to redraw all of the shapes in the overlay based on the new matrix
+		float[] m = new float[9];
+		matrix.getValues(m);
+		for (ColorShape cs : overlay) {
+			int newLeft = Math.round(cs.storeBounds.left * m[Matrix.MSCALE_X] + m[Matrix.MTRANS_X]); // need to get back to integer...
+			int newTop = Math.round(cs.storeBounds.top * m[Matrix.MSCALE_Y] + m[Matrix.MTRANS_Y]);
+			int newRight = Math.round(newLeft + (cs.storeBounds.right - cs.storeBounds.left) * m[Matrix.MSCALE_X]);
+			int newBottom = Math.round(newTop + (cs.storeBounds.bottom - cs.storeBounds.top) * m[Matrix.MSCALE_Y]);
+			cs.shape.setBounds(newLeft, newTop, newRight, newBottom);
+		}
+	}
+	
+	public void setImageOverlay(int overlayCode) {
+		// TODO:set up the particular overlays
+		switch (overlayCode) {
+		case MapActivity.BASEMENT_CODE:
+			break;
+		case MapActivity.EXTERIOR_CODE:
+			ShapeDrawable sd0 = new ShapeDrawable(new RectShape());
+			sd0.setBounds(550, 800, 600, 850);
+			ColorShape shape0 = new ColorShape(sd0, Color.RED, Color.YELLOW);
+			
+			ShapeDrawable sd1 = new ShapeDrawable(new RectShape());
+			sd1.setBounds(1200, 800, 1250, 850);
+			ColorShape shape1 = new ColorShape(sd1, Color.BLUE, Color.YELLOW);
+			overlay.add(shape0);
+			overlay.add(shape1);
+			break;
+		case MapActivity.INDOORS_CODE:
+			break;
+		case MapActivity.STUDIO_CODE:
+			break;
+		}
+	}
+	
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
+		// Just draw all of the shapes
+		for (ColorShape cs : overlay) {
+			cs.drawShape(canvas);
+		}
+	} 
+	
+	/**
+	 * Determining the intersection of two shapes is non-trivial.  Some would argue that
+	 * collide() belongs in ColorShape, but that is a dangerous move.  It would give
+	 * the impression that no matter what new shapes we wanted to check for collision, we
+	 * would be able to handle them appropriately, and this is an unreasonable request
+	 * unless we have our shapes represented as lists of vertices or sides vectors and
+	 * curves.  Since we don't (and developing a general graphics library simply for an
+	 * Android graphics tutorial seems a bit much), we explicitly handle the cases that
+	 * we wish to support right here in ShapesView.  This allows us to continue to use
+	 * the Android graphics libraries.
+	 * 
+	 * Currently, we check intersections of RectShape and OvalShape objects in any order.
+	 */
+	public static boolean collide(ColorShape s1, ColorShape s2) {
+		Rect r1 = s1.shape.getBounds();
+		Rect r2 = s2.shape.getBounds();
+		
+		/* 
+		 * Set up the bounding rectangles so that r2 is in the 1st quadrant with respect to r1
+		 * This may cause reflections of the x- and y- axis resulting in an orientation of r1 
+		 * and r2 where r1 is centered at origin and r2 is in the first quadrant.
+		 */
+		Rect r3 = new Rect();
+		int left = r1.centerX() + Math.abs(r2.centerX() - r1.centerX()) - r2.width()/2;
+		int right = r1.centerX() + Math.abs(r2.centerX() - r1.centerX()) + r2.width()/2;
+		int bottom = r1.centerY() + Math.abs(r2.centerY() - r1.centerY()) - r2.height()/2;
+		int top = r1.centerY() + Math.abs(r2.centerY() - r1.centerY()) + r2.height()/2;
+		r3.set(left, top, right, bottom);
+		r2 = r3;
+		
+		if (s1.shape.getShape() instanceof OvalShape) {
+			if (s2.shape.getShape() instanceof OvalShape) {
+				/* 
+				 * CASE 1: Two Ovals.  Center r1 at origin.  Iterate along the bottom-left 
+				 * portion of r2, and if any point on the ellipse is inside r1, the shapes 
+				 * collide.  Note that points on the perimeter of r2 may be in the 4th quadrant 
+				 * with respect to r1 (i.e. r1 is inside of r2).  These ellipses still 
+				 * intersect, and so instead of using the point on the perimeter, we use the 
+				 * projection onto either the positive X or positive Y axis.  The rationale 
+				 * here is that if (x, -y) is a perimeter point of r2, then (x,0) is an 
+				 * internal point of r2 (similarly, if (-x,y) is a perimeter point of r2, then 
+				 * (0,y) is an internal point of r2, and if (-x,-y) is a perimeter point of r2,
+				 * then (0,0) is an internal point of r2).  
+				 */
+				// for each integer between its center and the max on its semimajor axis
+				for (int i = Math.min(r2.left, r2.right); i <= r2.centerX(); i++) {
+					double x = i;
+					double x0 = r2.centerX();
+					double y0 = r2.centerY();
+					double a = r2.width()/2.0;
+					double b = r2.height()/2.0;
+
+					double y = y0 - Math.sqrt(b*b*(1 - (x-x0)*(x-x0)/(a*a)));
+					if (pointInEllipse( Math.max(x, r1.centerX()), Math.max(y, r1.centerY()), r1)) {
+						// they collide
+						return true;
+					}
+				}
+				// they don't collide
+				return false;
+			} else if (s2.shape.getShape() instanceof RectShape) {
+				/*
+				 * CASE 2: Oval at origin, rectangle in first quadrant
+				 * 
+				 * We can just check the bottom corner of r2.  If it is either inside the oval
+				 * or in the 2nd, 3rd, or 4th quadrant, then the shapes intersect.
+				 */
+				return pointInEllipse(Math.max(r2.left, r1.centerX()), Math.max(r2.bottom, r1.centerY()), r1);
+			} else {
+				// we don't recognize the type of s2
+				return false;
+			}
+		} else if (s1.shape.getShape() instanceof RectShape) {
+			if (s2.shape.getShape() instanceof OvalShape) {
+				/*
+				 * CASE 3:  Case 2 in reverse 
+				 * 
+				 * Just swap the arguments and call again
+				 */
+				return collide(s2, s1);
+			} else if (s2.shape.getShape() instanceof RectShape) {
+				/*
+				 * CASE 4:  Two rectangles
+				 * 
+				 * Just check to see that they overlap in both X and Y
+				 */
+				return (r2.left < Math.max(r1.left, r1.right) && r2.bottom < Math.max(r1.top, r1.bottom));
+			} else {
+				// we don't recognize the type of s2
+				return false;
+			}
+		} else {
+			// we don't recognize the type of s1
+			return false;
+		}
+	}
+	
+	/* Based on the Cartesian equation for an ellipse within rectangle defined
+	 * by r.
+	 *  
+	 * Technically, ellipse != oval, but I suspect  that OvalShape is actually
+	 * an ellipse, not an oval.  Either way, the difference between an ellipse
+	 * and an oval within a bounding rectangle is negligible and this should
+	 * work for all intents and purposes.
+	 */
+	public static boolean pointInEllipse(double x, double y, Rect r) {
+		double x0 = r.centerX();
+		double y0 = r.centerY();
+		double a = r.width()/2;
+		double b = r.height()/2;
+		
+		double eq = ( ((x - x0)*(x - x0)) / (a*a) ) + ( ((y - y0)*(y - y0)) / (b*b) );
+		return (eq <= 1.0);
 	}
 }

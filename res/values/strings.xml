@@ -3,9 +3,9 @@
 
     <string name="hello">Hello World, PhillyMagicGardensActivity!</string>
     <string name="hello_quote">“Art should not be segregated in museums; it needs to live free among us.”</string>
+    <string name="app_name">Philly Magic Gardens App</string>
     
     <!-- Strings for the Visitor Info page -->
-    <string name="app_name">Philly Magic Gardens App</string>
     <string name="contact_header">Contact Information</string>
     <string name="contact_address">Philadelphia\'s Magic Gardens\n1020 South Street\nPhiladelphia, PA 19147\nBetween 10th and 11th Streets on South Street</string>
     <string name="contact_phone">215–733–0390</string>
