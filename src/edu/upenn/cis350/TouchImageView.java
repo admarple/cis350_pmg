@@ -13,10 +13,8 @@ package edu.upenn.cis350;
 import java.util.ArrayList;
 
 import edu.upenn.cis350.ColorShape;
-import edu.upenn.cis350.R;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -423,23 +421,47 @@ public class TouchImageView extends ImageView {
 		// TODO:set up the particular overlays
 		switch (overlayCode) {
 		case MapActivity.BASEMENT_CODE:
+			// POI 3, East of Recycling Room
+			addOverlayIcon(2700, 1300, 2750, 1350);
 			break;
 		case MapActivity.EXTERIOR_CODE:
-			ShapeDrawable sd0 = new ShapeDrawable(new RectShape());
-			sd0.setBounds(550, 800, 600, 850);
-			ColorShape shape0 = new ColorShape(sd0, Color.RED, Color.YELLOW);
-			
-			ShapeDrawable sd1 = new ShapeDrawable(new RectShape());
-			sd1.setBounds(1200, 800, 1250, 850);
-			ColorShape shape1 = new ColorShape(sd1, Color.BLUE, Color.YELLOW);
-			overlay.add(shape0);
-			overlay.add(shape1);
+			// POI 4, Courtyard North
+			addOverlayIcon(2100, 1800, 2150, 1850);
+			// POI 5, Outdoor Labyrinth, First Alley Walls
+			addOverlayIcon(1150, 1200, 1200, 1250);
+			// POI 6, Under Huppa
+			addOverlayIcon(675, 1175, 725, 1225);
+			// POI 7, West wall near sanctuary
+			addOverlayIcon(600, 300, 650, 350);
+			// POI 8, Garden
+			addOverlayIcon(900, 600, 950, 650);
+			// POI 9, West Wall "Philadelphia"
+			addOverlayIcon(1500, 225, 1550, 275);
+			// POI 10, Alley 2 [???]
+			addOverlayIcon(1400, 525, 1450, 575);
+			// POI 11, Pool 1
+			addOverlayIcon(1825, 1100, 1875, 1150);
 			break;
 		case MapActivity.INDOORS_CODE:
+			// POI 0, Lobby
+			addOverlayIcon(2400, 1000, 2450, 1050);
+			// POI 12, Watkins Street
+			addOverlayIcon(3000, 1000, 3050, 1050);
 			break;
 		case MapActivity.STUDIO_CODE:
+			// POI 1, Gallery 1 South Wall
+			addOverlayIcon(1825, 1625, 1875, 1675);
+			// POI 2, Gallery 1 West Wall
+			addOverlayIcon(1075, 800, 1125, 850);
 			break;
 		}
+	}
+	
+	protected void addOverlayIcon(int left, int top, int right, int bottom) {
+		ShapeDrawable sd0 = new ShapeDrawable(new OvalShape());
+		sd0.setBounds(left, top, right, bottom);
+		ColorShape shape0 = new ColorShape(sd0, Color.BLUE, Color.RED);
+		overlay.add(shape0);
 	}
 	
 	protected void onDraw(Canvas canvas) {

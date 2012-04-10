@@ -34,11 +34,38 @@ public class PhillyMagicGardensActivity extends Activity {
         	}
         });
         
-        Button mapButton = (Button) findViewById(R.id.map_button);
-        mapButton.setOnClickListener(new View.OnClickListener() {
+        Button gardenMapButton = (Button) findViewById(R.id.garden_map_button);
+        gardenMapButton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {
         		Intent i = new Intent(pushThis, MapActivity.class);
         		i.putExtra(MapActivity.MAP_CODE_KEY, MapActivity.EXTERIOR_CODE);
+        		startActivity(i);
+        	}
+        });
+        
+        Button studioMapButton = (Button) findViewById(R.id.studio_map_button);
+        studioMapButton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent i = new Intent(pushThis, MapActivity.class);
+        		i.putExtra(MapActivity.MAP_CODE_KEY, MapActivity.STUDIO_CODE);
+        		startActivity(i);
+        	}
+        });
+        
+        Button indoorsMapButton = (Button) findViewById(R.id.indoors_map_button);
+        indoorsMapButton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent i = new Intent(pushThis, MapActivity.class);
+        		i.putExtra(MapActivity.MAP_CODE_KEY, MapActivity.INDOORS_CODE);
+        		startActivity(i);
+        	}
+        });
+        
+        Button basementMapButton = (Button) findViewById(R.id.basement_map_button);
+        basementMapButton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) {
+        		Intent i = new Intent(pushThis, MapActivity.class);
+        		i.putExtra(MapActivity.MAP_CODE_KEY, MapActivity.BASEMENT_CODE);
         		startActivity(i);
         	}
         });

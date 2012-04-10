@@ -5,10 +5,28 @@
     android:orientation="vertical">
 
     <Button 
-        android:id="@+id/map_button"
+        android:id="@+id/garden_map_button"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:text="@string/map_button_text"/>
+    	android:text="@string/garden_map_button_text"/>
+    
+    <Button 
+        android:id="@+id/indoors_map_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/indoors_map_button_text"/>
+    
+    <Button 
+        android:id="@+id/studio_map_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/studio_map_button_text"/>
+    
+    <Button 
+        android:id="@+id/basement_map_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/basement_map_button_text"/>
     
     <Button 
         android:id="@+id/info_button"
