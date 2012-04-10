@@ -2,9 +2,10 @@
 <resources>
 
     <string name="hello">Hello World, PhillyMagicGardensActivity!</string>
+    <string name="hello_quote">“Art should not be segregated in museums; it needs to live free among us.”</string>
+    <string name="app_name">Philly Magic Gardens App</string>
     
     <!-- Strings for the Visitor Info page -->
-    <string name="app_name">Philly Magic Gardens App</string>
     <string name="contact_header">Contact Information</string>
     <string name="contact_address">Philadelphia\'s Magic Gardens\n1020 South Street\nPhiladelphia, PA 19147\nBetween 10th and 11th Streets on South Street</string>
     <string name="contact_phone">215–733–0390</string>
@@ -36,49 +37,129 @@
     <string name="accessibility_info">Much of the main indoor gallery at Philadelphia\'s Magic Gardens and parts of the outdoor sculpture garden are accessible to people in wheelchairs. Both the basement and the sculpture garden have stairways and narrow passageways that are not equipped with ramps, elevators, or railings. Visitors with disabilities are encouraged to further explore the work of Isaiah Zagar through tours that lead visitors through PMG and down the sidewalks and alleys of the surrounding neighborhood. Please contact us and we will try to accommodate your needs.</string>
     
     <!-- Strings for the POI pages -->
-    <string name="poi_index_header">Points of Interest</string>
-    <string-array name="poi_object">
-        <item>Introduction</item>
-        <item>Aerial Photograph by Gabe Kirchheimer</item>
-        <item>Clarence Schmidt Lettered Tiles</item>
-        <item>Nek Chand and Ferdinand Cheval Lettered Tiles</item>
-        <item>Gate</item>
-    </string-array>
     <string-array name="poi_info">
-        <item >Philadelphia\'s Magic Gardens (PMG) is a mosaicked visionary art environment, gallery, and community arts center that preserves, interprets, and provides access to Isaiah Zagar\'s unique mosaic art environment and his public murals. The Magic Gardens site, Zagar\'s largest artwork, includes a fully tiled indoor space and a massive outdoor mosaic sculpture garden that spans half a block on Philadelphia\'s famous South Street. Inside, visitors can view folk art statues, bicycle wheels, colorful glass bottles, Zagar\'s hand-made tiles, and thousands of glittering mirrors. The installation pays tribute to Zagar\'s artistic influences, along with community and personal experiences.\nOpen to visitors daily, PMG has become a unique Philadelphia destination, hosting year-round, low-cost public programs within its own distinctive venue and the surrounding community. PMG, a nonprofit organization, inspires creativity and community engagement by educating the public about folk, mosaic, and visionary art. </item>
-    	<item>Philadelphia’s Magic Gardens is a 3,000 square foot mosaicked building and labyrinth created by artist Isaiah Zagar over 14 years.  Zagar originally purchased 1020 South Street in 1994 as an artist studio space but began to clean up and mosaic the trash-strewn abandoned lots next door to his property. In 2002, the owner of the lots decided to sell them and threatened to have the mosaicked labyrinth bulldozed at Zagar’s expense. The community recognized the site as a unique part of Philadelphia and united to form a non-profit organization, newly entitled Philadelphia’s Magic Gardens, to purchase the lots and save the visionary art environment from demolition.</item>
-    	<item>Clarence Schmidt was one of Isaiah Zagar’s earliest and most important influences. When Zagar was 19, he visited Schmidt’s <i>My Mirrored Hope</i>, a visionary art environment in Woodstock, New York. The experience of walking through Clarence’s labyrinth of wood, windows, found objects, and aluminum foil-covered trees was overwhelming to the young artist. Zagar befriended Schmidt and realized he wanted to make art that embodied the same full sensory experience as <i>My Mirrored Hope</i>.  Schmidt passed away in 1978, decades after his environments burned to the ground from electrical accidents.  </item>
-    	<item>Zagar frequently references other visionary environments and artists from around the world. It is important to Zagar that people know that there are other artists who have the same impulse to transform large spaces into elaborately-decorated, full sensory experiences. His work features the names of artists like Helen Martins from South Africa, Nek Chand Saini from India, Joseph Ferdinand Cheval from France, and Simon Rodia from Los Angeles. He also pays tribute to influential artists that have greater public recognition for their achievements, such as Pablo Picasso, Marcel DuChamp, and Vincent Van Gogh.</item>
-    	<item>Isaiah Zagar and his wife Julia worked in the Peace Corps in Peru for three years in the 1960s. After relocating to Philadelphia in 1968, they opened the Eye’s Gallery on 4th and South Streets, showcasing folk art that they purchased in South America. This was the first site Zagar ever mosaicked. During the late 60s and 70s, South Street was transforming from an abandoned street to a thriving cultural destination due to the efforts of newly-settled artists and activists.  This period became known as the “South Street Renaissance.”  The Eye’s Gallery is still open today and continues to sell folk art from Latin America and around the world. </item>
+    	<item>Philadelphia’s Magic Gardens is a 3,000 square foot mosaicked building and labyrinth created by artist Isaiah Zagar over 14 years. Zagar originally purchased 1020 South Street in 1994 as an artist studio space but began to clean up and mosaic the trash-strewn abandoned lots next door to his property. In 2002, the owner of the lots decided to sell them and threatened to have the mosaicked labyrinth bulldozed at Zagar’s expense. The community recognized the site as a unique part of Philadelphia and united to form a non-profit organization, newly entitled Philadelphia’s Magic Gardens, to purchase the lots and save the visionary art environment from demolition.</item>
+    	<item>Clarence Schmidt was one of Isaiah Zagar’s earliest and most important influences. When Zagar was 19, he visited Schmidt’s My Mirrored Hope, a visionary art environment in Woodstock, New York. The experience of walking through Clarence’s labyrinth of wood, windows, found objects, and aluminum foil-covered trees was overwhelming to the young artist. Zagar befriended Schmidt and realized he wanted to make art that embodied the same full sensory experience as My Mirrored Hope. Schmidt passed away in 1978, decades after his environments burned to the ground from electrical accidents.</item>
+    	<item>The self-portrait of the “four-armed Isaiah” is prevalent throughout the Gardens. In the 1970s Isaiah saw an exhibition at the Philadelphia Museum of Art featuring sculptures of the Hindu god Shiva. Shiva, who is often depicted with six arms, is the god of destruction and transformation. Similarly, Zagar takes destroyed objects and transforms them into art. Zagar also says he mosaics so quickly, it is as if he has four arms.</item>
+    	<item>There are three main types of tile Zagar uses throughout the Gardens. Zagar uses many different indoor house tiles that are donated from people in the community. Zagar will either break the tiles and use them as they are or paint words and images on them in glaze. Some of the tiles incorporated into the murals are cut using a special water jet process similar to laser cutting. These pieces come from Surbeck Water Jet, a company in Ardmore that gives Zagar left over pieces and tiles with defects. Zagar also commissioned the company to cut tiles based on his drawings. Signature elements in a Zagar mosaic are doily tiles, which he makes by pressing an old fashioned lace doily onto a ball of clay. This procedure creates a beautiful “snowflake” patterned texture onto the tile. Zagar says the doily tiles are aesthetically important to give an organic softness to the geometric elements of mosaic. Michelle Obama and her daughters visited in 2009 and made doily tiles with Zagar as did Mayor Nutter in 2011.</item>
+    	<item>Isaiah Zagar and his wife Julia worked in the Peace Corps in Peru for three years in the 1960s.  After relocating to Philadelphia in 1968, they opened the Eye’s Gallery on 4th and South Streets, showcasing folk art that they purchased in South America. This was the first site Zagar ever mosaicked. During the late 60s and 70s, South Street was transforming from an abandoned street to a thriving cultural destination due to the efforts of newly-settled artists and activists.  This period became known as the “South Street Renaissance.” The Eye’s Gallery is still open today and continues to sell folk art from Latin America and around the world.</item>
+    	<item>Zagar frequently references other visionary environments and artists from around the world.  It is important to Zagar that people know that there are other artists who have the same impulse to transform large spaces into elaborately-decorated, full sensory experiences. His work features the names of artists like Helen Martins from South Africa, Nek Chand Saini from India, Joseph Ferdinand Cheval from France, and Simon Rodia from Los Angeles. He also pays tribute to influential artists that have greater public recognition for their achievements, such as Pablo Picasso, Marcel DuChamp, and Vincent Van Gogh.</item>
+    	<item>Many of the sculptures embedded in the walls were created by artists from around the world, particularly from Mexico. Zagar often collaborates with folk artists and commissions them to create art based on his drawings. Mexican artists such as Luis Valencia, Joel Garcia, and Josephina Aguilar, are all featured in the Gardens. Zagar collaborates with local Philadelphia artists as well, such as Warren Muller, who created the large found object chandelier under the “huppa” in the Gardens.\n\nThe Zagars travelled to Bali, Indonesia and Isaiah commissioned a family to carve this traditional Balinese house frame based on his drawings. Isaiah said he entire family from the grandfather to the five year old grandson worked on the piece. We refer to the carved house frame as a huppa, which is traditionally used in Jewish wedding ceremonies, since Isaiah and Julia renewed their vows underneath it in 2005.</item>
+    	<item>Zagar begins his process by pressing tiles, sculptures, and found objects into extra grout, creating what he calls ”blobs”. He bolts the dried blobs to the wall and then paints his design directly on the wall. Next he attaches mirror pieces to the edges of the design and fills in the mural with additional tiles. After waiting for the tile adhesive to set, he covers empty spaces with colorful grout, making sure the mosaic is smooth. Finally, he repaints his original lines to further define his original image.</item>
+    	<item>Isaiah and Julia had two sons, Eziekiel who is a musician and Jeremiah who is a director. In 2008, Jeremiah released his documentary titled In A Dream. The award-winning feature film chronicles Zagar’s expansive work and his a tumultuous time period for the Zagar family.</item>
+    	<item>In the 1960s the city had slated South and Lombard Streets to be demolished to create an eight lane highway connecting I-76 to I-95. Many home and business owners left the area as the city began buying properties and demolishing buildings. A community of artists and activists flocked to South Street for its affordable housing, and they began the 18 year battle against the highway. This time period is known as the South Street Renaissance and they recently celebrated the 40th anniversary of their victory at PMG.</item>
+    	<item>Zagar creates this imitation stained glass technique by adhering colorful glass with clear glue to a large window pane and then grouting over the pieces. Zagar pulls the grout out to create a design and wipes the grout off the glass pieces to let the light shine through. Zagar learned this method from Ricky Boscarino, who created a visionary environment in New Jersey called Luna Parc.</item>
+    	<item>Zagar was deeply affected by the terrorist attacks on September 11, 2001. While completing a residency at the Kohler Art Center shortly after the attacks, Zagar created a number of tiles based on 9/11. You can recognize these memorials throughout the gardens and in his public murals by their references to planes and burning buildings.</item>
+    	<item>PMG is Isaiah Zagar\'s largest mosaiced site, but he is currently working on a warehouse in South Philadelphia that is nearly three times the size of the Gardens! Located at 10th and Watkins Street, Isaiah has been mosacing the entire 9,000 space since he purchased the building in 2004.</item>
     </string-array>
     <string-array name="poi_location">
-    	<item></item>
     	<item>Lobby</item>
     	<item>Gallery One, South Wall</item>
-    	<item>Outdoor Labyrinth, First Alley Walls</item>
+    	<item>Gallery One, west wall</item>
+    	<item>East of Recycling room (all three types are present)</item>
     	<item>Courtyard North</item>
+    	<item>Outdoor Labyrinth, First Alley Walls</item>
+    	<item>Under Huppa</item>
+    	<item>West Wall</item>
+    	<item>Garden</item>
+    	<item>West Wall “Philadelphia”</item>
+    	<item>Alley 2</item>
+    	<item>Pool 1</item>
+    	<item>10th and Watkins St.</item>
     </string-array>
     <string-array name="poi_theme">
-    	<item></item>
     	<item>The Non-Profit</item>
-    	<item>Clarence Schmidt</item>
-    	<item>Visionary Environments &amp; Their Creators</item>
-    	<item>Eyes Gallery </item>
+        <item>Clarence Schmidt</item>
+        <item>Four-armed Zagar</item>
+        <item>Types of Tile</item>
+        <item>Eyes Gallery</item>
+        <item>Visionary Environments &amp; Their Creators</item>
+        <item>Artistic Collaboration</item>
+        <item>Zagar\'s Mosaic Process</item>
+        <item>Zagar Family and In A Dream Documentary</item>
+        <item>South Street History</item>
+        <item>Faux Stained Glass Technique</item>
+        <item>9/11, Kohler Residency</item>
+        <item>Watkins Street</item>
     </string-array>
     <string-array name="poi_photo">
-    	<item></item>
     	<item>Aerial photograph by Gabe Kirchheimer</item>
     	<item>Clarence Schmidt Lettered Tiles embedded on PMG Gallery One Wall</item>
-    	<item>Nek Chand and Simon Rodia Lettered Tiles</item>
+    	<item>Tin Sculpture, photograph of IZ in basement?, four armed Josephina sculpture alley 2</item>
+    	<item>Type of Tile</item>
     	<item>Gate</item>
+    	<item>Nek Chand and Simon Rodia Lettered Tiles</item>
+    	<item>Huppa, Michael Morgan</item>
+    	<item>Mosaic Workshop images</item>
+    	<item>Jeremiah Tile, Zagar Family</item>
+    	<item>Philadelphia, Contribute</item>
+    	<item>Stained Glass window, Luna Parc</item>
+    	<item>Large tile, 9/11 tile by huppa, Lou Orocofsky building</item>
+    	<item>Watkins Street</item>
+    </string-array>
+    <string-array name="poi_object">
+    	<item>Aerial Photograph by Gabe Kirchheimer</item>
+    	<item>Clarence Schmidt Lettered Tiles</item>
+    	<item>Tin Zagar Sculpture</item>
+    	<item>Surbeck swirl, doily tiles and donated tiles</item>
+    	<item>Gate</item>
+    	<item>Nek Chand and Ferdinand Cheval Lettered Tiles</item>
+    	<item>Huppa</item>
+    	<item>Woman on West wall near sanctuary</item>
+    	<item>Jeremiah Tile</item>
+    	<item>Philadelphia</item>
+    	<item>Stained Glass Window</item>
+    	<item>Large Blue Tile, West Wall</item>
+    	<item></item>
+    </string-array>
+    
+    
+    
+    
+    <string-array name="glossary_term">
+    	<item>Readymade</item>
+    	<item>Blobs</item>
+    	<item>Visionary Art Environment</item>
+    	<item>South Street Renaissance</item>
+    	<item>Nek Chand Saini</item>
+    	<item>Helens Martins</item>
+    	<item>Edward James</item>
+    	<item>Ferdinand Cheval</item>
+    	<item>Clarence Schmidt</item>
+    	<item>Marcel Duchamp</item>
+    </string-array>
+    
+    <string-array name="glossary_def">
+    	<item>An object manufactured for some other purpose, presented by an artist as a work of art. Between 1914 and 1921, Marcel Duchamp (French, 1887-1968), who originated this concept, selected and signed, among others, a snow shovel, a comb, and a urinal. He occasionally altered readymades (sometimes called assisted readymades) — the most famous of which was a cheap reproduction of Mona Lisa on which Duchamp drew a mustache. [As definted by www.artlex.com]</item>
+    	<item>Adorned “puddles” of concrete that are dried and then bolted to a wall as a part of the Isaiah Zagar Mosaic Method.  Blobs often serve as the focal point for Zagar’s murals.</item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
+    	<item></item>
     </string-array>
     
     <!-- Button Labels -->
     <string name="pmg_logo_desc">PMG main logo</string>
     <string name="pmg_splash_desc">Splash image for the app introduction</string>
-    <string name="map_button_text">Garden Map</string>
+    <string name="garden_map_button_text">Garden Map</string>
+    <string name="studio_map_button_text">Studio Map</string>
+    <string name="indoors_map_button_text">Indoor Map</string>
+    <string name="basement_map_button_text">Basement Map</string>
     <string name="info_button_text">Visitor Information!</string>
     <string name="menu_button_text">Menu</string>
     <string name="poi_index_button_text">Points of Interest</string>
+    <string name="contact_button_text">Contact</string>
+    <string name="hours_button_text">Hours</string>
+    <string name="admission_button_text">Admission</string>
+    <string name="policy_button_text">Policy</string>
+    <string name="parking_button_text">Parking</string>
+    <string name="accessibility_button_text">Accessibility</string>
+    <string name="glossary_button_text">Glossary</string>
+    
+    <string name="poi_location_tag">Location: </string>
 
 </resources>

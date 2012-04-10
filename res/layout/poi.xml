@@ -17,6 +17,7 @@
             android:textSize="22dp" />
 
         <ImageView
+            android:contentDescription="@string/app_name"
             android:id="@+id/poi_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -24,6 +25,38 @@
         <TextView
             android:id="@+id/poi_info"
             android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:id="@+id/poi_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+    		android:text="@string/poi_location_tag" />
+        
+        <Button 
+        	android:id="@+id/map_button"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content" />
+        
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/poi_extra_image1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/poi_extra_image2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/poi_extra_image3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/poi_extra_image4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
 

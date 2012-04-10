@@ -2,25 +2,48 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
-    android:background="#EEEEEEEE" >
+    android:orientation="vertical">
 
     <Button 
-        android:id="@+id/map_button"
-    	android:layout_width="wrap_content"
+        android:id="@+id/garden_map_button"
+    	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
-    	android:text="@string/map_button_text"/>
+    	android:text="@string/garden_map_button_text"/>
+    
+    <Button 
+        android:id="@+id/indoors_map_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/indoors_map_button_text"/>
+    
+    <Button 
+        android:id="@+id/studio_map_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/studio_map_button_text"/>
+    
+    <Button 
+        android:id="@+id/basement_map_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/basement_map_button_text"/>
     
     <Button 
         android:id="@+id/info_button"
-    	android:layout_width="wrap_content"
+    	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:text="@string/info_button_text"/>
     
     <Button 
         android:id="@+id/poi_index_button"
-    	android:layout_width="wrap_content"
+    	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:text="@string/poi_index_button_text"/>
+    
+    <Button 
+        android:id="@+id/glossary_button"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:text="@string/glossary_button_text"/>
 
 </LinearLayout>

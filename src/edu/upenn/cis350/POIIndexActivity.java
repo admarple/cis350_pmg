@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class POIIndexActivity extends Activity {
@@ -16,18 +17,15 @@ public class POIIndexActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		LinearLayout layout = new LinearLayout (this);
+		ScrollView scroll = new ScrollView(this);
+		scroll.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT));
+		LinearLayout layout = new LinearLayout(this);
 		layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
 		layout.setOrientation(LinearLayout.VERTICAL);
 
 		// LinearLayout layout = (LinearLayout) findViewById(R.id.poi_layout);
-
-		TextView header = new TextView(this);
-		header.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
-		header.setText(R.string.poi_index_header);
-		header.setTextSize((float) 22.0);
 		
-        String[] poiObject = getResources().getStringArray(R.array.poi_object);
+        String[] poiObject = getResources().getStringArray(R.array.poi_theme);
         int numPOIs = poiObject.length;
         
         for (int i=0; i < numPOIs; i++) {
@@ -43,8 +41,12 @@ public class POIIndexActivity extends Activity {
         	});
             layout.addView(b);
         } 
-
-        super.setContentView(layout);
+        scroll.addView(layout);
+        super.setContentView(scroll);
+        
+        // does this help garbage collection???  I don't know, but we'll see
+        scroll = null;
+        layout = null;
 	}
 	
 }
