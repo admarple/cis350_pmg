@@ -44,7 +44,7 @@ public class ColorShape {
 	/**
 	 * Mark this ColorShape as "clicked"
 	 */
-	public void click() {
+	public void highlight() {
 		clicked = true;
 	}
 	

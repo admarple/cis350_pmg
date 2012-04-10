@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import edu.upenn.cis350.ColorShape;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -175,6 +177,9 @@ public class TouchImageView extends ImageView {
 		@Override
 		public boolean onSingleTapConfirmed(MotionEvent e) {
 			mode = NONE;
+			// check to see if we want to go to a POI page
+			PointF curr = new PointF(e.getX(), e.getY());
+			checkForPOINav(curr);
 			performClick();
 			return true;
 		}
@@ -458,10 +463,26 @@ public class TouchImageView extends ImageView {
 		}
 	}
 	
+	/* 
+	 * having this method makes it dangerous to use this class without an Activity as the Context
+	 */
+	protected void checkForPOINav(PointF p) {
+		for (int key : overlay.keySet()) {
+			ColorShape icon = overlay.get(key);
+			if (icon != null) {
+				if (pointInEllipse(p.x, p.y, icon.shape.copyBounds() )) {
+					Intent intent = new Intent(((Activity)getContext()), POIActivity.class);
+        			intent.putExtra(POIActivity.POI_CODE_KEY, key);
+        			((Activity)getContext()).startActivity(intent);
+				}
+			}
+		}
+	}
+	
 	public void setHighlightIcon(int iconIndex) {
 		ColorShape toHighlight = overlay.get(iconIndex);
 		if (toHighlight != null) {
-			toHighlight.click();
+			toHighlight.highlight();
 		}
 	}
 	
