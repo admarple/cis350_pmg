@@ -426,11 +426,9 @@ public class TouchImageView extends ImageView {
 	public void setImageOverlay(int overlayCode) {
 		// TODO:set up the particular overlays
 		switch (overlayCode) {
-		case MapActivity.BASEMENT_CODE:
-			// POI 3, East of Recycling Room
-			addOverlayIcon(3, 900, 433, 917, 450);
-			break;
 		case MapActivity.EXTERIOR_CODE:
+			// POI 3, East of Recycling Room
+			addOverlayIcon(3, 383, 625, 400, 642);
 			// POI 4, Courtyard North
 			addOverlayIcon(4, 700, 600, 717, 617);
 			// POI 5, Outdoor Labyrinth, First Alley Walls
@@ -451,14 +449,14 @@ public class TouchImageView extends ImageView {
 		case MapActivity.INDOORS_CODE:
 			// POI 0, Lobby
 			addOverlayIcon(0, 800, 333, 817, 350);
+			// POI 1, Gallery 1 South Wall
+			addOverlayIcon(1, 433, 350, 450, 367);
+			// POI 2, Gallery 1 West Wall
+			addOverlayIcon(2, 390, 409, 407, 426);
 			// POI 12, Watkins Street
 			addOverlayIcon(12, 1033, 350, 1050, 367);
 			break;
 		case MapActivity.STUDIO_CODE:
-			// POI 1, Gallery 1 South Wall
-			addOverlayIcon(1, 608, 541, 625, 558);
-			// POI 2, Gallery 1 West Wall
-			addOverlayIcon(2, 358, 266, 375, 283);
 			break;
 		}
 	}

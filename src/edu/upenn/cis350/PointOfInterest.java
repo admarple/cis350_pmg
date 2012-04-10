@@ -47,7 +47,7 @@ public class PointOfInterest {
 						  R.drawable.poi_4commercial_painted_tile,
 						  R.drawable.poi_4doily_tile,
 						  R.drawable.poi_4surbeck_tile };
-		PointOfInterest poi = new PointOfInterest(_images, MapActivity.BASEMENT_CODE);
+		PointOfInterest poi = new PointOfInterest(_images, MapActivity.EXTERIOR_CODE);
 		return poi;
 	}
 

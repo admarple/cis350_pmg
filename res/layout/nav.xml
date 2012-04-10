@@ -23,12 +23,6 @@
     	android:text="@string/studio_map_button_text"/>
     
     <Button 
-        android:id="@+id/basement_map_button"
-    	android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-    	android:text="@string/basement_map_button_text"/>
-    
-    <Button 
         android:id="@+id/info_button"
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"

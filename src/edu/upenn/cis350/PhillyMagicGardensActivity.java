@@ -61,15 +61,6 @@ public class PhillyMagicGardensActivity extends Activity {
         	}
         });
         
-        Button basementMapButton = (Button) findViewById(R.id.basement_map_button);
-        basementMapButton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) {
-        		Intent i = new Intent(pushThis, MapActivity.class);
-        		i.putExtra(MapActivity.MAP_CODE_KEY, MapActivity.BASEMENT_CODE);
-        		startActivity(i);
-        	}
-        });
-        
         Button infoButton = (Button) findViewById(R.id.info_button);
         infoButton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) {

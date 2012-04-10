@@ -9,7 +9,6 @@ import android.widget.FrameLayout;
 
 public class MapActivity extends Activity {
 
-	public static final int BASEMENT_CODE = 0;
 	public static final int EXTERIOR_CODE = 1;
 	public static final int INDOORS_CODE = 2;
 	public static final int STUDIO_CODE = 3;
@@ -20,7 +19,7 @@ public class MapActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map);
-        setTouchImage(getIntent().getIntExtra(MAP_CODE_KEY, 0), 
+        setTouchImage(getIntent().getIntExtra(MAP_CODE_KEY, 1), 
         		      getIntent().getIntExtra(HIGHLIGHT_CODE_KEY, -1));
     }
 	
@@ -30,10 +29,6 @@ public class MapActivity extends Activity {
         // toUpdate.setMaxZoom(4f);
 		Bitmap bMap;
 		switch (touchCode) {
-		case BASEMENT_CODE:
-			bMap = BitmapFactory.decodeResource(getResources(), R.drawable.pmg_basement1);
-			toUpdate.setImageBitmap(bMap);
-			break;
 		case EXTERIOR_CODE:
 			bMap = BitmapFactory.decodeResource(getResources(), R.drawable.pmg_garden_plan_exterior1);
 			toUpdate.setImageBitmap(bMap);
