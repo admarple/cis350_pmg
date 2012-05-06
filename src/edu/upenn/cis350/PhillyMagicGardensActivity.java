@@ -17,7 +17,10 @@ public class PhillyMagicGardensActivity extends Activity {
 	// This is an ugly, ugly thing to do, but it will have to wait to be fixed
 	final Activity pushThis = this;
 	
-    /** Called when the activity is first created. */
+    /** 
+     * Called when the activity is first created.  Set up a ViewFlipper to flip between the intro screen and
+     *  the main menu, as well as hook up the buttons on that menu properly
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

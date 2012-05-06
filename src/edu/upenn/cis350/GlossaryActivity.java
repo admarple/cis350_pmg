@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 public class GlossaryActivity extends Activity {
 
+	/**
+	 * Set up a glossary of terms pulled from resource strings
+	 */
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

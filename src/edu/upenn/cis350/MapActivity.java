@@ -1,6 +1,7 @@
 package edu.upenn.cis350;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ public class MapActivity extends Activity {
 	public static final int STUDIO_CODE = 3;
 	public static final String MAP_CODE_KEY = "mapCode";
 	public static final String HIGHLIGHT_CODE_KEY = "highlightCode";
+	public static final int GET_HIGHLIGHT_POI_INDEX = 1;
+	TouchImageView toUpdate;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,7 +28,7 @@ public class MapActivity extends Activity {
 	
 	protected void setTouchImage(int touchCode, int highlightCode) {
 		
-		TouchImageView toUpdate = new TouchImageView(this);
+		toUpdate = new TouchImageView(this);
         // toUpdate.setMaxZoom(4f);
 		Bitmap bMap;
 		switch (touchCode) {
@@ -47,5 +50,16 @@ public class MapActivity extends Activity {
 		setContentView(toUpdate);
 		toUpdate.setLayoutParams(new FrameLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 	}
+	
+	/*
+	 * Need to reset the highlighted icon if we're starting to loop from map to POI pages  
+	 */
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == GET_HIGHLIGHT_POI_INDEX) {
+            if (resultCode == RESULT_OK) {
+                toUpdate.setHighlightIcon(data.getIntExtra(HIGHLIGHT_CODE_KEY, -1));
+            }
+        }
+    }
 	
 }

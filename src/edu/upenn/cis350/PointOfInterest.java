@@ -28,7 +28,7 @@ public class PointOfInterest {
 	// 1
 	public static PointOfInterest poi1() {
 		int[] _images = {R.drawable.poi_2clarence};
-		PointOfInterest poi = new PointOfInterest(_images, MapActivity.STUDIO_CODE);
+		PointOfInterest poi = new PointOfInterest(_images, MapActivity.INDOORS_CODE);
 		return poi;
 	}
 	
@@ -37,7 +37,7 @@ public class PointOfInterest {
 		int[] _images = { R.drawable.poi_3four_armed_iz, 
 						  R.drawable.poi_3four_armed_iz2, 
 						  R.drawable.poi_3tin_man };
-		PointOfInterest poi = new PointOfInterest(_images, MapActivity.STUDIO_CODE);
+		PointOfInterest poi = new PointOfInterest(_images, MapActivity.INDOORS_CODE);
 		return poi;
 	}
 

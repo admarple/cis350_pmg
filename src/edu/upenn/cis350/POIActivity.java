@@ -19,9 +19,12 @@ public class POIActivity extends Activity {
 	public String[] poiLocation;
 	
 	public static final String POI_CODE_KEY = "POI_CODE_KEY";
+	public static final String POI_GOTO_MAP_KEY = "POI_GOTO_MAP_KEY";
+
 	ImageView poiImage;
 	TextView poiText;
 	TextView poiHeader;
+	TextView poiLoc;
 	Button mapButton;
 	PointOfInterest poi;
 	
@@ -44,6 +47,9 @@ public class POIActivity extends Activity {
         setButton(poiNumber);
     }
 	
+	
+	// A point of interest has at least one image associated with it, possibly more.
+	// We need to gather all resources associated with a particular point of interest
 	protected void setPoiImages(int poiNumber) {
 		poiImage = (ImageView) findViewById(R.id.poi_image);
 		Bitmap bMap = BitmapFactory.decodeResource(getResources(), poi.images[0]);
@@ -87,16 +93,32 @@ public class POIActivity extends Activity {
 	
 	protected void setButton(int poiNumber) {
 		mapButton = (Button) findViewById(R.id.map_button);
+		poiLoc = (TextView) findViewById(R.id.poi_location);
 		final int _poiNumber = Math.min(poiNumber, poiTitle.length-1);
-        mapButton.setText(poiLocation[_poiNumber]);
-        mapButton.setOnClickListener(new View.OnClickListener() {
-    		public void onClick(View view) {
-    			Intent intent = new Intent(pushThis, MapActivity.class);
-    			intent.putExtra(MapActivity.MAP_CODE_KEY, poi.mapNumber);
-    			intent.putExtra(MapActivity.HIGHLIGHT_CODE_KEY, _poiNumber);
-    			startActivity(intent);
-    		}
-    	});
+        poiLoc.setText(poiLocation[_poiNumber]);
+        mapButton.setText("Map it!");
+        if (getIntent().getBooleanExtra(POI_GOTO_MAP_KEY, false)) {
+        	mapButton.setOnClickListener(new View.OnClickListener() {
+        		public void onClick(View view) {
+        			Intent intent = new Intent(pushThis, MapActivity.class);
+        			intent.putExtra(MapActivity.MAP_CODE_KEY, poi.mapNumber);
+        			intent.putExtra(MapActivity.HIGHLIGHT_CODE_KEY, _poiNumber);
+        			setResult(RESULT_OK, intent);
+        			finish();
+        		}
+        	});
+        } else {
+        	mapButton.setOnClickListener(new View.OnClickListener() {
+        		public void onClick(View view) {
+        			Intent intent = new Intent(pushThis, MapActivity.class);
+        			intent.putExtra(MapActivity.MAP_CODE_KEY, poi.mapNumber);
+        			intent.putExtra(MapActivity.HIGHLIGHT_CODE_KEY, _poiNumber);
+        			startActivity(intent);
+        		}
+        	});
+        }
 	}
+	
+	
 	
 }

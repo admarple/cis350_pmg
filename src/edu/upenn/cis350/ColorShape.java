@@ -48,6 +48,10 @@ public class ColorShape {
 		clicked = true;
 	}
 	
+	public void unHighlight() {
+		clicked = false;
+	}
+	
 	/**
 	 * Unmark this ColorShape as "clicked"
 	 */

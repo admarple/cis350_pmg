@@ -68,6 +68,7 @@ public class TouchImageView extends ImageView {
 	
 	// the overlay of shapes we wish to draw
 	HashMap<Integer, ColorShape> overlay;
+	ColorShape toHighlight;
 
 	public TouchImageView(Context context) {
 		super(context);
@@ -415,7 +416,7 @@ public class TouchImageView extends ImageView {
 		float[] m = new float[9];
 		matrix.getValues(m);
 		for (ColorShape cs : overlay.values()) {
-			int newLeft = Math.round(cs.storeBounds.left * m[Matrix.MSCALE_X] + m[Matrix.MTRANS_X]); // need to get back to integer...
+			int newLeft = Math.round(cs.storeBounds.left * m[Matrix.MSCALE_X] + m[Matrix.MTRANS_X]);
 			int newTop = Math.round(cs.storeBounds.top * m[Matrix.MSCALE_Y] + m[Matrix.MTRANS_Y]);
 			int newRight = Math.round(newLeft + (cs.storeBounds.right - cs.storeBounds.left) * m[Matrix.MSCALE_X]);
 			int newBottom = Math.round(newTop + (cs.storeBounds.bottom - cs.storeBounds.top) * m[Matrix.MSCALE_Y]);
@@ -423,6 +424,8 @@ public class TouchImageView extends ImageView {
 		}
 	}
 	
+	// we have an overlay of icons on top of our map that represents points of interest.
+	// This overlay needs to scale and zoom with the map itself
 	public void setImageOverlay(int overlayCode) {
 		// TODO:set up the particular overlays
 		switch (overlayCode) {
@@ -471,14 +474,18 @@ public class TouchImageView extends ImageView {
 				if (pointInEllipse(p.x, p.y, icon.shape.copyBounds() )) {
 					Intent intent = new Intent(((Activity)getContext()), POIActivity.class);
         			intent.putExtra(POIActivity.POI_CODE_KEY, key);
-        			((Activity)getContext()).startActivity(intent);
+        			intent.putExtra(POIActivity.POI_GOTO_MAP_KEY, true);
+        			((Activity)getContext()).startActivityForResult(intent, MapActivity.GET_HIGHLIGHT_POI_INDEX);
 				}
 			}
 		}
 	}
 	
 	public void setHighlightIcon(int iconIndex) {
-		ColorShape toHighlight = overlay.get(iconIndex);
+		if (toHighlight != null) {
+			toHighlight.unHighlight();
+		}
+		toHighlight = overlay.get(iconIndex);
 		if (toHighlight != null) {
 			toHighlight.highlight();
 		}

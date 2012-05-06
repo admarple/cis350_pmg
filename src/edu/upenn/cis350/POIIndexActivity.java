@@ -14,6 +14,10 @@ public class POIIndexActivity extends Activity {
 	
 	final Activity pushThis = this;
 
+	/**
+	 * set up the menu with an arbitrary number of points of interest (we want to be able to see all
+	 * of them, hence the scroll, and navigate to all of them, hence the buttons)
+	 */
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
@@ -22,8 +26,6 @@ public class POIIndexActivity extends Activity {
 		LinearLayout layout = new LinearLayout(this);
 		layout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
 		layout.setOrientation(LinearLayout.VERTICAL);
-
-		// LinearLayout layout = (LinearLayout) findViewById(R.id.poi_layout);
 		
         String[] poiObject = getResources().getStringArray(R.array.poi_theme);
         int numPOIs = poiObject.length;
