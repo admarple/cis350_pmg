@@ -22,27 +22,33 @@
         </activity>
         
         <activity 
-            android:name=".VisitorInfoActivity">    
+            android:name=".VisitorInfoActivity"
+            android:theme="@android:style/Theme.NoTitleBar">    
         </activity>
         
         <activity 
-            android:name=".NavigationActivity">    
+            android:name=".NavigationActivity"
+            android:theme="@android:style/Theme.NoTitleBar">    
         </activity>
         
         <activity 
-            android:name=".MapActivity">    
+            android:name=".MapActivity"
+            android:theme="@android:style/Theme.NoTitleBar">    
         </activity>
         
         <activity 
-            android:name=".POIActivity">
+            android:name=".POIActivity"
+            android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
         <activity 
-            android:name=".POIIndexActivity">
+            android:name=".POIIndexActivity"
+            android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
         <activity 
-            android:name=".GlossaryActivity">
+            android:name=".GlossaryActivity"
+            android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         
     </application>
